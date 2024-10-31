@@ -1,11 +1,11 @@
 <div>
     <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
+        <h2 class="font-semibold text-xl bg-white dark:bg-bgblack text-gray-800 dark:text-gray-200 leading-tight">
             {{ __('Create User') }}
         </h2>
     </x-slot>
 
-    <div class="bg-white dark:bg-gray-800 max-w-7xl mx-auto py-10 sm:px-6 lg:px-8 rounded-md mt-8">
+    <div class="bg-white dark:bg-bgblack max-w-7xl mx-auto py-10 sm:px-6 lg:px-8 rounded-md mt-8">
         <form wire:submit.prevent="submitForm">
             <div class="grid grid-cols-2 sm:grid-cols-2 gap-6">
                 <div class="col-span-1">

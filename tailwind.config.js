@@ -17,6 +17,14 @@ export default {
             fontFamily: {
                 sans: ['Figtree', ...defaultTheme.fontFamily.sans],
             },
+            colors: {
+                'yellow': '#FA991C',
+                'lightwhite': '#FBF3F2',
+                'lightblue': '#1C768F',
+                'darkblue': '#032539',
+                'bgblack': '#111111',
+                'adminbody':'#101316',
+            },
         },
     },
 
