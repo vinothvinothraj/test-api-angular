@@ -1,7 +1,10 @@
 <?php
 
 
+use App\Http\Livewire\User\UserIndex;
 use Illuminate\Support\Facades\Route;
+use App\Http\Livewire\User\UserCreate;
+use App\Http\Livewire\User\UserUpdate;
 use App\Http\Livewire\LandingPage\Home;
 use App\Http\Livewire\LandingPage\GetSinglePost;
 
@@ -21,3 +24,7 @@ Route::middleware([
         return view('dashboard');
     })->name('dashboard');
 });
+
+Route::get('/admin/users', UserIndex::class)->name('admin.user.index');
+Route::get('/admin/users/create', UserCreate::class)->name('admin.user.create');
+Route::get('/admin/users/{id}/edit', UserUpdate::class)->name('admin.user.update');
