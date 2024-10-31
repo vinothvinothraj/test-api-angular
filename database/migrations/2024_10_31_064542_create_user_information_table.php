@@ -22,6 +22,7 @@ return new class extends Migration
             $table->string('address')->nullable();
             $table->string('phone')->nullable();
             $table->enum('user_type', ['admin', 'SE', 'ASE', 'INTERN','SUPPORT-STAFF'])->default('SE');
+            $table->string('profile_image')->nullable();
             $table->timestamps();
         });
     }

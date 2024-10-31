@@ -4,6 +4,7 @@ namespace App\Http\Livewire\User;
 
 use App\Models\User;
 use Livewire\Component;
+use Livewire\WithFileUploads;
 use App\Models\UserInformation;
 use Illuminate\Support\Facades\Hash;
 use Laravel\Jetstream\InteractsWithBanner;
@@ -12,6 +13,10 @@ class UserCreate extends Component
 {
 
     use InteractsWithBanner;
+
+    use WithFileUploads;
+
+    
     public $first_name;
     public $last_name;
     public $email;
@@ -22,6 +27,7 @@ class UserCreate extends Component
     public $user_type;
     public $address;
     public $phone;
+    public $profileImage;
 
     protected $rules = [
         'first_name' => 'required|string|max:255',
@@ -34,11 +40,14 @@ class UserCreate extends Component
         'user_type' => 'required|string|in:admin,SE,ASE,INTERN,SUPPORT-STAFF',
         'address' => 'required|string|max:255',
         'phone' => 'required|string|max:20',
+        'profileImage' => 'nullable|image|max:5120',
     ];
 
     public function createUser()
     {
         $this->validate();
+
+        $profileImagePath = $this->profileImage ? $this->profileImage->store('profile-images', 'public') : null;
 
         $user = User::create([
             'name' => $this->first_name . ' ' . $this->last_name,
@@ -56,7 +65,8 @@ class UserCreate extends Component
             'gender' => $this->gender,
             'user_type' => $this->user_type,
             'address' => $this->address,
-            'phone' => $this->phone
+            'phone' => $this->phone,
+            'profile_image' => $profileImagePath,
         ]);
 
         $this->banner('User Created Successfully');
@@ -82,9 +92,10 @@ class UserCreate extends Component
         $this->user_type = '';
         $this->address = '';
         $this->phone = '';
-
+        $this->profileImage = '';
         $this->resetValidation();
     }
+
     public function render()
     {
         return view('livewire.user.user-create')->layout('layouts.app');
