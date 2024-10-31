@@ -19,6 +19,7 @@ class UserInformation extends Model
         'address', 
         'phone',
         'user_type',
+        'profile_image',
     ];
 
     public function user()

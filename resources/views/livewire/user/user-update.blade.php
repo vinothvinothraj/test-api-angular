@@ -32,16 +32,18 @@
                     <x-input-error for="phone" class="mt-2" />
                 </div>
 
-                <div class="col-span-2">
-                    <x-label for="address" value="{{ __('Address') }}" />
-                    <x-textarea id="address" type="text" class="mt-1 block w-full" wire:model.defer="address" autocomplete="address" />
-                    <x-input-error for="address" class="mt-2" />
-                </div>
+                
 
                 <div class="col-span-1">
                     <x-label for="nic_id" value="{{ __('NIC ID') }}" />
                     <x-input id="nic_id" type="text" class="mt-1 block w-full" wire:model.defer="nic_id" autocomplete="nic_id" />
                     <x-input-error for="nic_id" class="mt-2" />
+                </div>
+
+                <div class="col-span-1">
+                    <x-label for="address" value="{{ __('Address') }}" />
+                    <x-textarea id="address" type="text" class="mt-1 block w-full" wire:model.defer="address" autocomplete="address" />
+                    <x-input-error for="address" class="mt-2" />
                 </div>
 
                 <div class="col-span-1">

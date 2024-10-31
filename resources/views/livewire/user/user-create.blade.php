@@ -32,11 +32,7 @@
                     <x-input-error for="phone" class="mt-2" />
                 </div>
 
-                <div class="col-span-2">
-                    <x-label for="address" value="{{ __('Address') }}" />
-                    <x-textarea id="address" type="text" class="mt-1 block w-full" wire:model.defer="address" autocomplete="address" />
-                    <x-input-error for="address" class="mt-2" />
-                </div>
+                
 
                 <div class="col-span-1">
                     <x-label for="nic_id" value="{{ __('NIC ID') }}" />
@@ -69,6 +65,12 @@
                 </div>
 
                 <div class="col-span-1">
+                    <x-label for="profileImage" value="{{ __('Profile Image') }}" />
+                    <input id="profileImage" type="file" wire:model="profileImage" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:border-indigo-500 focus:ring focus:ring-indigo-200 focus:ring-opacity-50">
+                    <x-input-error for="profileImage" class="mt-2" />
+                </div>
+
+                <div class="col-span-1">
                     <x-label for="password" value="{{ __('Password') }}" />
                     <x-input id="password" type="password" class="mt-1 block w-full" wire:model.defer="password" autocomplete="new-password" />
                     <x-input-error for="password" class="mt-2" />
@@ -79,6 +81,14 @@
                     <x-input id="confirm_password" type="password" class="mt-1 block w-full" wire:model.defer="confirm_password" autocomplete="confirm-password" />
                     <x-input-error for="confirm_password" class="mt-2" />
                 </div>
+
+                <div class="col-span-2">
+                    <x-label for="address" value="{{ __('Address') }}" />
+                    <x-textarea id="address" type="text" class="mt-1 block w-full" wire:model.defer="address" autocomplete="address" />
+                    <x-input-error for="address" class="mt-2" />
+                </div>
+
+                
             </div>
 
             <div class="flex justify-between mt-6">
@@ -91,7 +101,7 @@
                         {{ __('Reset') }}
                     </x-button>
 
-                    <x-button type="button" wire:click="createUser">
+                    <x-button class="bg-green-500 dark:bg-yellow text-white dark:text-darkblue" type="button" wire:click="createUser">
                         {{ __('Create') }}
                     </x-button>
                 </div>
