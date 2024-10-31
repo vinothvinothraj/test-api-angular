@@ -1,5 +1,8 @@
 <div>
-    <div class="container-fluid pt-5">
+    <div class="container-fluid pt-10">
+      <div class="p-2">
+        <h2 class="text-2xl text-center font-bold text-darkblue">Get sample post</h2>
+      </div>
         <div class="container p-8 flex items-center justify-center" ng-controller="specificPostController">
             <div class="w-3/4 p-6 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
                 

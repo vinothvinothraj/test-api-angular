@@ -73,7 +73,7 @@ class UserUpdate extends Component
             'email' => $this->email,
         ]);
 
-        session()->flash('message', 'User updated successfully.');
+        $this->banner('User Updated Successfully');
         return redirect()->route('admin.user.index');
     }
 
