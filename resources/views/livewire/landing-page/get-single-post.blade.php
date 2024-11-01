@@ -63,8 +63,8 @@
         app.controller('specificPostController', function($scope, $http) {
             $scope.post = {};
 
-            // Fetch the specific post
-            $http.get('https://jsonplaceholder.typicode.com/posts/1')
+            
+            $http.get('api/posts/1')
                 .then(function(response) {
                     $scope.post = response.data;  
                     console.log($scope.post);

@@ -41,7 +41,7 @@
             $scope.posts = [];
             $scope.activepost = {};
     
-            $http.get('https://jsonplaceholder.typicode.com/posts')
+            $http.get('api/posts')
                 .then(function(response) {
                     $scope.posts = response.data;  
                     console.log($scope.posts);
