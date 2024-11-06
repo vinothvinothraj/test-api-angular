@@ -8,12 +8,12 @@ use App\Http\Livewire\User\UserUpdate;
 use App\Http\Livewire\LandingPage\Home;
 use App\Http\Livewire\LandingPage\GetSinglePost;
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
+Route::get('/', function () {
+    return view('welcome');
+});
 
-Route::get('/', Home::class)->name('home');
-Route::get('/post', GetSinglePost::class)->name('post');
+// Route::get('/', Home::class)->name('home');
+// Route::get('/post', GetSinglePost::class)->name('post');
 
 Route::middleware([
     'auth:sanctum',
